@@ -58,9 +58,21 @@ async function buildApp(appName) {
     archive.on("error", (err) => reject(err));
     archive.pipe(output);
 
+    // Explicitly add dist folder
+    if (fs.existsSync(path.join(appPath, "dist"))) {
+      archive.directory(path.join(appPath, "dist"), "dist");
+    }
+
+    // Add other files
     archive.glob("**/*", {
       cwd: appPath,
-      ignore: ["node_modules/**", ".git/**", "src/**", "rspack.config.js"],
+      ignore: [
+        "node_modules/**",
+        ".git/**",
+        "src/**",
+        "rspack.config.js",
+        "dist/**", // Exclude dist here to avoid duplicates/issues
+      ],
     });
 
     archive.finalize();

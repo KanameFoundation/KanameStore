@@ -2,7 +2,7 @@
   "name": "terminal-application",
   "version": "1.0.0",
   "description": "Terminal Application for KanameOS",
-  "main": "index.js",
+  "main": "dist/main.js",
   "osjs": {
     "type": "application"
   },
