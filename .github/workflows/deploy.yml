@@ -69,7 +69,7 @@ jobs:
           fi
         fi
 
-    - name: Deploy to gh-pages branch
+    - name: Deploy to gh-pages branchs
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
