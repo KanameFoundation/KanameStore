@@ -1,6 +1,6 @@
 {
   "name": "kaname-store",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "App Store Registry for KanameOS",
   "scripts": {
     "build": "node scripts/build-repo.js",
