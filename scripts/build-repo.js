@@ -138,16 +138,48 @@ async function buildApp(appName) {
 }
 
 async function main() {
-  if (fs.existsSync(APPS_DIR)) {
-    const apps = fs.readdirSync(APPS_DIR);
-    for (const app of apps) {
-      if (fs.statSync(path.join(APPS_DIR, app)).isDirectory()) {
+  // Get app names from command line arguments
+  const appsToBuild = process.argv.slice(2);
+
+  if (appsToBuild.length > 0) {
+    // Build only specified apps
+    console.log(`Building specific apps: ${appsToBuild.join(", ")}`);
+    for (const app of appsToBuild) {
+      const appPath = path.join(APPS_DIR, app);
+      if (fs.existsSync(appPath) && fs.statSync(appPath).isDirectory()) {
         await buildApp(app);
+      } else {
+        console.warn(`⚠ App '${app}' not found in ${APPS_DIR}`);
+      }
+    }
+
+    // Load existing repository.json if it exists
+    if (fs.existsSync(REPO_FILE)) {
+      const existingRepo = JSON.parse(fs.readFileSync(REPO_FILE, "utf-8"));
+      // Keep apps that weren't rebuilt
+      const builtAppNames = repository.apps.map((a) => a.name);
+      const unchangedApps = existingRepo.apps.filter(
+        (a) => !builtAppNames.includes(a.name)
+      );
+      repository.apps = [...unchangedApps, ...repository.apps];
+    }
+  } else {
+    // Build all apps (default behavior)
+    console.log("Building all apps...");
+    if (fs.existsSync(APPS_DIR)) {
+      const apps = fs.readdirSync(APPS_DIR);
+      for (const app of apps) {
+        if (fs.statSync(path.join(APPS_DIR, app)).isDirectory()) {
+          await buildApp(app);
+        }
       }
     }
   }
+
   fs.writeFileSync(REPO_FILE, JSON.stringify(repository, null, 2));
-  console.log("Repository index generated.");
+  console.log(
+    `✓ Repository index generated with ${repository.apps.length} app(s).`
+  );
 }
 
 main().catch(console.error);

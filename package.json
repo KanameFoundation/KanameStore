@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "App Store Registry for KanameOS",
   "scripts": {
-    "build": "node scripts/build-repo.js"
+    "build": "node scripts/build-repo.js",
+    "build:app": "node scripts/build-repo.js"
   },
   "dependencies": {
     "archiver": "^5.3.0"

@@ -22,6 +22,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Get full history for change detection
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -31,8 +33,41 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
+    - name: Detect Changed Apps
+      id: changes
+      run: |
+        # Get changed files in this push
+        CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} || echo "")
+        
+        # Extract unique app names from apps/ directory
+        CHANGED_APPS=$(echo "$CHANGED_FILES" | grep '^apps/' | cut -d'/' -f2 | sort -u | tr '\n' ' ')
+        
+        echo "Changed files: $CHANGED_FILES"
+        echo "Changed apps: $CHANGED_APPS"
+        echo "apps=$CHANGED_APPS" >> $GITHUB_OUTPUT
+        
+        # Check if we should build all (e.g., first push, script changes)
+        if echo "$CHANGED_FILES" | grep -E '^(scripts/|package.json)' || [ -z "${{ github.event.before }}" ]; then
+          echo "build_all=true" >> $GITHUB_OUTPUT
+        else
+          echo "build_all=false" >> $GITHUB_OUTPUT
+        fi
+
     - name: Build Apps and Repository
-      run: node scripts/build-repo.js
+      run: |
+        if [ "${{ steps.changes.outputs.build_all }}" = "true" ]; then
+          echo "Building all apps..."
+          node scripts/build-repo.js
+        else
+          APPS="${{ steps.changes.outputs.apps }}"
+          if [ -n "$APPS" ]; then
+            echo "Building changed apps: $APPS"
+            node scripts/build-repo.js $APPS
+          else
+            echo "No apps changed, skipping build"
+            exit 0
+          fi
+        fi
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
