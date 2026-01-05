@@ -38,7 +38,10 @@ async function buildApp(appName) {
     }
   }
 
-  console.log(`Building ${pkg.name} v${pkg.version}...`);
+  // Display name from metadata, ID from package.json
+  const displayName = metadata.name || pkg.name;
+
+  console.log(`Building ${displayName} (${pkg.name}) v${pkg.version}...`);
 
   // Handle Icon
   let iconPath = null;
@@ -73,6 +76,7 @@ async function buildApp(appName) {
   // Determine Title
   const title =
     (metadata.title && metadata.title.en_EN) ||
+    metadata.name ||
     pkg.kaname?.title ||
     pkg.description ||
     pkg.name;
@@ -97,8 +101,8 @@ async function buildApp(appName) {
       console.log(`  -> Created ${zipName} (${archive.pointer()} bytes)`);
 
       repository.apps.push({
-        name: pkg.name,
-        title: title,
+        name: metadata.name || pkg.name, // ID from metadata.json (matches OS registration)
+        title: title, // Display name from metadata
         version: pkg.version,
         description: pkg.description,
         category: pkg.kaname?.category || metadata.category || "Uncategorized",
