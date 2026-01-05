@@ -1,11 +1,11 @@
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-const archiver = require('archiver');
+const fs = require("fs");
+const path = require("path");
+const { execSync } = require("child_process");
+const archiver = require("archiver");
 
-const APPS_DIR = path.join(__dirname, '../apps');
-const DIST_DIR = path.join(__dirname, '../dist');
-const REPO_FILE = path.join(DIST_DIR, 'repository.json');
+const APPS_DIR = path.join(__dirname, "../apps");
+const DIST_DIR = path.join(__dirname, "../dist");
+const REPO_FILE = path.join(DIST_DIR, "repository.json");
 
 if (!fs.existsSync(DIST_DIR)) {
   fs.mkdirSync(DIST_DIR);
@@ -13,39 +13,39 @@ if (!fs.existsSync(DIST_DIR)) {
 
 const repository = {
   generatedAt: new Date().toISOString(),
-  apps: []
+  apps: [],
 };
 
 async function buildApp(appName) {
   const appPath = path.join(APPS_DIR, appName);
-  const pkgPath = path.join(appPath, 'package.json');
+  const pkgPath = path.join(appPath, "package.json");
 
   if (!fs.existsSync(pkgPath)) return;
 
   const pkg = require(pkgPath);
-  console.log(`Building app: ${pkg.name}...`);
+  console.log(`Building ${pkg.name} v${pkg.version}...`);
 
-  const zipName = ${pkg.name}-.wpk;
+  const zipName = `${pkg.name}-${pkg.version}.wpk`;
   const zipPath = path.join(DIST_DIR, zipName);
   const output = fs.createWriteStream(zipPath);
-  const archive = archiver('zip', { zlib: { level: 9 } });
+  const archive = archiver("zip", { zlib: { level: 9 } });
 
   return new Promise((resolve, reject) => {
-    output.on('close', () => {
-      console.log(  -> Created  ( bytes));
-      
+    output.on("close", () => {
+      console.log(`  -> Created ${zipName} (${archive.pointer()} bytes)`);
+
       repository.apps.push({
         name: pkg.name,
         version: pkg.version,
         description: pkg.description,
-        category: pkg.kaname?.category || 'Uncategorized',
+        category: pkg.kaname?.category || "Uncategorized",
         download: zipName,
-        icon: pkg.kaname?.icon
+        icon: pkg.kaname?.icon,
       });
       resolve();
     });
 
-    archive.on('error', (err) => reject(err));
+    archive.on("error", (err) => reject(err));
     archive.pipe(output);
     archive.directory(appPath, false);
     archive.finalize();
@@ -62,7 +62,7 @@ async function main() {
     }
   }
   fs.writeFileSync(REPO_FILE, JSON.stringify(repository, null, 2));
-  console.log('Repository index generated.');
+  console.log("Repository index generated.");
 }
 
 main().catch(console.error);
