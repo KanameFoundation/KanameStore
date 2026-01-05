@@ -1,4 +1,24 @@
 {
-  "generatedAt": "2026-01-05T12:38:09.689Z",
-  "apps": []
+  "generatedAt": "2026-01-05T17:35:56.338Z",
+  "apps": [
+    {
+      "name": "SystemControl",
+      "title": "System Control",
+      "version": "1.2.1",
+      "category": "system",
+      "download": "system-control-1.2.1.wpk",
+      "icon": null,
+      "iconName": "preferences-system"
+    },
+    {
+      "name": "Terminal",
+      "title": "Terminal",
+      "version": "1.1.1",
+      "description": "Terminal Application for KanameOS",
+      "category": "utilities",
+      "download": "terminal-1.1.1.wpk",
+      "icon": null,
+      "iconName": "utilities-terminal"
+    }
+  ]
 }
