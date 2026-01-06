@@ -48,8 +48,7 @@ async function buildApp(appName) {
   const iconSource =
     pkg.kaname?.icon ||
     metadata.icon ||
-    (pkg.kaname && pkg.kaname.icon) ||
-    "icon.png"; // Default fallback
+    (pkg.kaname && pkg.kaname.icon)
 
   // Try to find the icon file
   const possibleIconPaths = [
