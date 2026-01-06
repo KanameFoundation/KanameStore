@@ -1,10 +1,10 @@
 {
-  "name": "settings-application",
+  "name": "StandardTheme",
   "version": "1.0.0",
-  "description": "Settings Application for KanameOS",
+  "description": "Standard Theme for KanameOS",
   "main": "index.js",
   "osjs": {
-    "type": "application"
+    "type": "theme"
   },
   "dependencies": {
     "@osjs/gui": "^4.0.30",

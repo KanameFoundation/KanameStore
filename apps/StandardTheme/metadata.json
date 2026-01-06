@@ -1,6 +1,7 @@
 {
   "type": "theme",
   "name": "StandardTheme",
+  "version": "1.0.0",
   "title": {
     "en_EN": "Standard Theme",
     "fr_FR": "Thème Standard",
@@ -16,7 +17,7 @@
     "pt_BR": "Tema padrão"
   },
   "files": [
-    "main.js",
-    "main.css"
+    "index.js",
+    "index.css"
   ]
 }
