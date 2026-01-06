@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-06T08:49:18.629Z",
+  "generatedAt": "2026-01-06T08:59:54.942Z",
   "apps": [
     {
       "name": "FileManager",
@@ -28,6 +28,16 @@
       "download": "system-control-1.2.2.wpk",
       "icon": null,
       "iconName": "preferences-system"
+    },
+    {
+      "name": "GnomeIcons",
+      "title": "Gnome Icons",
+      "version": "1.0.0",
+      "description": "Gnome Icons for KanameOS",
+      "category": "Uncategorized",
+      "download": "gnome-icons-1.0.0.wpk",
+      "icon": "icons/gnome-icons.png",
+      "iconName": "icon.png"
     }
   ]
 }
