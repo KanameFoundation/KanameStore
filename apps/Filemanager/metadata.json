@@ -1,6 +1,7 @@
 {
   "name": "FileManager",
   "category": "utilities",
+  "version": "2.0.0",
   "icon": "system-file-manager",
   "title": {
     "en_EN": "File Manager",
