@@ -267,5 +267,3 @@ const register = (core, args, options, metadata) => {
 };
 
 OSjs.make("osjs/packages").register(applicationName, register);
-
-export default register;
