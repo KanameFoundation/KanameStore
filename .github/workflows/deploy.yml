@@ -46,6 +46,13 @@ jobs:
           echo "build_all=false" >> $GITHUB_OUTPUT
         fi
 
+    - name: Restore previous build
+      continue-on-error: true
+      run: |
+        mkdir -p dist
+        git fetch origin live
+        git archive origin/live | tar -x -C dist || echo "No existing build found"
+
     - name: Build Apps and Repository
       run: |
         if [ "${{ steps.changes.outputs.build_all }}" = "true" ]; then
