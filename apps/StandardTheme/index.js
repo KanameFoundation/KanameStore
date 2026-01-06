@@ -32,4 +32,4 @@ import './index.scss';
 import {name} from './metadata.json';
 import {register} from './src/theme.js';
 
-osjs.register(name, register);
+OSjs.register(name, register);
