@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-06T09:40:44.007Z",
+  "generatedAt": "2026-01-06T09:42:45.004Z",
   "apps": [
     {
       "name": "FileManager",
@@ -36,6 +36,15 @@
       "description": "Gnome Icons for KanameOS",
       "category": "Uncategorized",
       "download": "gnome-icons-1.0.0.wpk",
+      "icon": null
+    },
+    {
+      "name": "StandardTheme",
+      "title": "Standard Theme",
+      "version": "1.0.0",
+      "description": "Standard Theme for KanameOS",
+      "category": "Uncategorized",
+      "download": "standard-theme-1.0.0.wpk",
       "icon": null
     }
   ]
