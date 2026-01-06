@@ -7,7 +7,7 @@ module.exports = {
   mode,
   devtool: "source-map",
   entry: {
-    main: [
+    index: [
       path.resolve(__dirname, "index.js"),
       path.resolve(__dirname, "index.scss"),
     ],
