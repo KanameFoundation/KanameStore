@@ -103,7 +103,7 @@ async function buildApp(appName) {
       repository.apps.push({
         name: metadata.name || pkg.name, // ID from metadata.json (matches OS registration)
         title: title, // Display name from metadata
-        version: pkg.version,
+        version: metadata.version,
         description: pkg.description,
         category: pkg.kaname?.category || metadata.category || "Uncategorized",
         download: zipName,
