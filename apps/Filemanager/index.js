@@ -855,7 +855,7 @@ const createWindow = (core, proc) => {
   const onNavigate = (...args) => vfs.readdir(...args);
   const onSelectItem = files => (state.currentFile = files);
   const onSelectStatus = files => win.emit('filemanager:status', formatStatusMessage(core)(state.currentPath, Array.isArray(files) ? files : [files]));
-  const onContextMenu = ({ev, data}) => createMenu({ev, name: 'edit'}, data, true);
+  const onContextMenu = ({ev, data}) => createMenu({ev, name: 'edit'}, data ? (Array.isArray(data) ? data : [data]) : [], true);
   const onReaddirRender = args => wired.setList(args);
   const onRefresh = (...args) => vfs.refresh(...args);
   const onOpen = files => {
