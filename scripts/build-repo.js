@@ -41,7 +41,7 @@ async function buildApp(appName) {
   // Display name from metadata, ID from package.json
   const displayName = metadata.name || pkg.name;
 
-  console.log(`Building ${displayName} (${pkg.name}) v${pkg.version}...`);
+  console.log(`Building ${displayName} (${pkg.name}) v${metadata.version}...`);
 
   // Handle Icon
   let iconPath = null;
@@ -91,7 +91,7 @@ async function buildApp(appName) {
     return;
   }
 
-  const zipName = `${pkg.name}-${pkg.version}.wpk`;
+  const zipName = `${pkg.name}-${metadata.version}.wpk`;
   const zipPath = path.join(DIST_DIR, zipName);
   const output = fs.createWriteStream(zipPath);
   const archive = archiver("zip", { zlib: { level: 9 } });
