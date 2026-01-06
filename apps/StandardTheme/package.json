@@ -1,5 +1,5 @@
 {
-  "name": "StandardTheme",
+  "name": "standard-theme",
   "version": "1.0.0",
   "description": "Standard Theme for KanameOS",
   "main": "index.js",
@@ -9,9 +9,9 @@
   "dependencies": {
     "@rspack/cli": "^1.0.0",
     "@rspack/core": "^1.0.0",
-    "@osjs/gui": "^4.0.30",
-    "deepmerge": "^4.2.2",
-    "hyperapp": "^1.2.10"
+    "css-loader": "^6.7.3",
+    "sass": "^1.58.3",
+    "sass-loader": "^13.2.0"
   },
   "scripts": {
     "build": "rspack"
