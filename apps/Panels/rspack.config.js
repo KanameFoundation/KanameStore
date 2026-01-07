@@ -2,7 +2,6 @@ const path = require("path");
 const rspack = require("@rspack/core");
 const mode = process.env.NODE_ENV || "development";
 const minimize = mode === "production";
-const npm = require("../../../package.json");
 
 module.exports = {
   mode,
@@ -19,9 +18,6 @@ module.exports = {
     minimize,
   },
   plugins: [
-    new rspack.DefinePlugin({
-      WEBOS_VERSION: JSON.stringify(npm.version),
-    }),
     new rspack.CssExtractRspackPlugin({
       filename: "main.css",
     }),
