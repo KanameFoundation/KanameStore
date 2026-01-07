@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-07T16:34:39.516Z",
+  "generatedAt": "2026-01-07T16:40:29.552Z",
   "apps": [
     {
       "name": "FileManager",
@@ -116,6 +116,16 @@
       "download": "settings-application-1.0.3.wpk",
       "icon": null,
       "iconName": "preferences-system"
+    },
+    {
+      "name": "FreedesktopSounds",
+      "title": "Freedesktop Sounds",
+      "version": "1.0.2",
+      "description": "OS.js Freedesktop Sounds",
+      "category": "Uncategorized",
+      "download": "freedesktopsound-1.0.2.wpk",
+      "icon": null,
+      "iconName": "preferences-desktop-sound"
     }
   ]
 }
