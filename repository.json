@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-07T14:04:08.655Z",
+  "generatedAt": "2026-01-07T14:06:45.597Z",
   "apps": [
     {
       "name": "FileManager",
@@ -66,6 +66,16 @@
       "download": "osjs-desktop-1.0.0.wpk",
       "icon": null,
       "iconName": "computer"
+    },
+    {
+      "name": "osjs-notifications",
+      "title": "Notifications",
+      "version": "1.0.0",
+      "description": "KanameOS Notification System",
+      "category": "system",
+      "download": "osjs-notifications-1.0.0.wpk",
+      "icon": null,
+      "iconName": "dialog-information"
     }
   ]
 }
