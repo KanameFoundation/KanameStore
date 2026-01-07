@@ -1,6 +1,6 @@
 {
-  "name": "Settings",
-  "version": "1.0.0",
+  "name": "settings-application",
+  "version": "1.0.1",
   "title": {
     "en_EN": "Settings"
   },
