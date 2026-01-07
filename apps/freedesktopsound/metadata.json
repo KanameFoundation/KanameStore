@@ -1,7 +1,8 @@
 {
   "type": "sounds",
   "name": "FreedesktopSounds",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "icon": "preferences-desktop-sound",
   "author": "KanameFundation",
   "title": {
     "en_EN": "Freedesktop Sounds",
