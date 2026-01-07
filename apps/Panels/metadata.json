@@ -1,7 +1,7 @@
 {
   "name": "osjs-panels",
   "category": "system",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "autostart": true,
   "singleton": true,
   "icon": "preferences-desktop-display",
