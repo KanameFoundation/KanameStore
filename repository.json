@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-07T14:14:36.938Z",
+  "generatedAt": "2026-01-07T14:16:36.428Z",
   "apps": [
     {
       "name": "FileManager",
@@ -80,10 +80,10 @@
     {
       "name": "osjs-panels",
       "title": "Panels Service",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "description": "OS.js Panels",
       "category": "system",
-      "download": "@osjs/panels-1.4.0.wpk",
+      "download": "osjs-panel-1.4.1.wpk",
       "icon": null,
       "iconName": "preferences-desktop-display"
     }
