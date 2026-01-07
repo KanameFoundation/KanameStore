@@ -1,0 +1,18 @@
+{
+  "name": "Settings",
+  "version": "1.0.0",
+  "title": {
+    "en_EN": "Settings"
+  },
+  "description": {
+    "en_EN": "System Settings and User Management"
+  },
+  "icon": "preferences-system",
+  "category": "system",
+  "singleton": true,
+  "server": "server.js",
+  "files": [
+    "main.js",
+    "main.css"
+  ]
+}
