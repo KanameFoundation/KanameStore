@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-07T16:15:37.404Z",
+  "generatedAt": "2026-01-07T16:34:39.516Z",
   "apps": [
     {
       "name": "FileManager",
@@ -88,26 +88,6 @@
       "iconName": "preferences-desktop-display"
     },
     {
-      "name": "settings-application",
-      "title": "Settings",
-      "version": "1.0.2",
-      "description": "Settings Application for KanameOS",
-      "category": "system",
-      "download": "settings-application-1.0.2.wpk",
-      "icon": null,
-      "iconName": "preferences-system"
-    },
-    {
-      "name": "appmanager",
-      "title": "App Manager",
-      "version": "1.0.1",
-      "description": "Application Manager for KanameOS",
-      "category": "system",
-      "download": "app-manager-1.0.1.wpk",
-      "icon": null,
-      "iconName": "system-software-install"
-    },
-    {
       "name": "store",
       "title": "App Store",
       "version": "1.0.2",
@@ -116,6 +96,26 @@
       "download": "store-1.0.2.wpk",
       "icon": null,
       "iconName": "system-software-install"
+    },
+    {
+      "name": "appmanager",
+      "title": "App Manager",
+      "version": "1.0.2",
+      "description": "Application Manager for KanameOS",
+      "category": "system",
+      "download": "app-manager-1.0.2.wpk",
+      "icon": null,
+      "iconName": "system-software-install"
+    },
+    {
+      "name": "settings-application",
+      "title": "Settings",
+      "version": "1.0.3",
+      "description": "Settings Application for KanameOS",
+      "category": "system",
+      "download": "settings-application-1.0.3.wpk",
+      "icon": null,
+      "iconName": "preferences-system"
     }
   ]
 }
