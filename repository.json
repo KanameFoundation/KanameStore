@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-07T16:40:29.552Z",
+  "generatedAt": "2026-01-07T16:54:47.954Z",
   "apps": [
     {
       "name": "FileManager",
@@ -108,16 +108,6 @@
       "iconName": "system-software-install"
     },
     {
-      "name": "settings-application",
-      "title": "Settings",
-      "version": "1.0.3",
-      "description": "Settings Application for KanameOS",
-      "category": "system",
-      "download": "settings-application-1.0.3.wpk",
-      "icon": null,
-      "iconName": "preferences-system"
-    },
-    {
       "name": "FreedesktopSounds",
       "title": "Freedesktop Sounds",
       "version": "1.0.2",
@@ -126,6 +116,16 @@
       "download": "freedesktopsound-1.0.2.wpk",
       "icon": null,
       "iconName": "preferences-desktop-sound"
+    },
+    {
+      "name": "settings-application",
+      "title": "Settings",
+      "version": "1.0.4",
+      "description": "Settings Application for KanameOS",
+      "category": "system",
+      "download": "settings-application-1.0.4.wpk",
+      "icon": null,
+      "iconName": "preferences-system"
     }
   ]
 }
