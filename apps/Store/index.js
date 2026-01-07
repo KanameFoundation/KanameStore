@@ -438,7 +438,7 @@ const register = (core, args, options, metadata) => {
                 }
 
                 // 4. Launch AppManager to install
-                core.run("AppManager", {
+                core.run("appmanager", {
                   file: { path: destPath },
                 });
 
