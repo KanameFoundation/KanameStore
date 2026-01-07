@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-07T15:58:47.743Z",
+  "generatedAt": "2026-01-07T16:06:24.497Z",
   "apps": [
     {
       "name": "FileManager",
@@ -106,6 +106,16 @@
       "download": "settings-application-1.0.2.wpk",
       "icon": null,
       "iconName": "preferences-system"
+    },
+    {
+      "name": "appmanager",
+      "title": "App Manager for KanameOS",
+      "version": "1.0.0",
+      "description": "Application Manager for KanameOS",
+      "category": "system",
+      "download": "app-manager-1.0.0.wpk",
+      "icon": null,
+      "iconName": "system-software-install"
     }
   ]
 }
