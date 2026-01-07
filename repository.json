@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-07T14:16:36.428Z",
+  "generatedAt": "2026-01-07T15:53:21.629Z",
   "apps": [
     {
       "name": "FileManager",
@@ -86,6 +86,16 @@
       "download": "osjs-panel-1.4.1.wpk",
       "icon": null,
       "iconName": "preferences-desktop-display"
+    },
+    {
+      "name": "Store",
+      "title": "App Store",
+      "version": "1.0.0",
+      "description": "App Store for KanameOS",
+      "category": "system",
+      "download": "store-1.0.0.wpk",
+      "icon": null,
+      "iconName": "system-software-install"
     }
   ]
 }
