@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-08T06:44:04.401Z",
+  "generatedAt": "2026-01-08T06:50:16.730Z",
   "apps": [
     {
       "name": "FileManager",
@@ -9,24 +9,6 @@
       "download": "filemanager-2.0.0.wpk",
       "icon": null,
       "iconName": "system-file-manager"
-    },
-    {
-      "name": "GnomeIcons",
-      "title": "Gnome Icons",
-      "version": "1.0.0",
-      "description": "Gnome Icons for KanameOS",
-      "category": "Uncategorized",
-      "download": "gnome-icons-1.0.0.wpk",
-      "icon": null
-    },
-    {
-      "name": "StandardTheme",
-      "title": "Standard Theme",
-      "version": "1.2.1",
-      "description": "Standard Theme for KanameOS",
-      "category": "Uncategorized",
-      "download": "standard-theme-1.2.1.wpk",
-      "icon": null
     },
     {
       "name": "SystemControl",
@@ -126,6 +108,26 @@
       "download": "freedesktopsound-1.0.3.wpk",
       "icon": null,
       "iconName": "audio-x-generic"
+    },
+    {
+      "name": "GnomeIcons",
+      "title": "Gnome Icons",
+      "version": "1.0.1",
+      "description": "Gnome Icons for KanameOS",
+      "category": "Uncategorized",
+      "download": "gnome-icons-1.0.1.wpk",
+      "icon": null,
+      "iconName": "application-x-addon"
+    },
+    {
+      "name": "StandardTheme",
+      "title": "Standard Theme",
+      "version": "1.2.2",
+      "description": "Standard Theme for KanameOS",
+      "category": "Uncategorized",
+      "download": "standard-theme-1.2.2.wpk",
+      "icon": null,
+      "iconName": "preferences-desktop-theme"
     }
   ]
 }
