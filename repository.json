@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-07T16:54:47.954Z",
+  "generatedAt": "2026-01-08T06:44:04.401Z",
   "apps": [
     {
       "name": "FileManager",
@@ -108,16 +108,6 @@
       "iconName": "system-software-install"
     },
     {
-      "name": "FreedesktopSounds",
-      "title": "Freedesktop Sounds",
-      "version": "1.0.2",
-      "description": "OS.js Freedesktop Sounds",
-      "category": "Uncategorized",
-      "download": "freedesktopsound-1.0.2.wpk",
-      "icon": null,
-      "iconName": "preferences-desktop-sound"
-    },
-    {
       "name": "settings-application",
       "title": "Settings",
       "version": "1.0.4",
@@ -126,6 +116,16 @@
       "download": "settings-application-1.0.4.wpk",
       "icon": null,
       "iconName": "preferences-system"
+    },
+    {
+      "name": "FreedesktopSounds",
+      "title": "Freedesktop Sounds",
+      "version": "1.0.3",
+      "description": "OS.js Freedesktop Sounds",
+      "category": "Uncategorized",
+      "download": "freedesktopsound-1.0.3.wpk",
+      "icon": null,
+      "iconName": "audio-x-generic"
     }
   ]
 }
