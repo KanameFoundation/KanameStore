@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-16T18:31:15.115Z",
+  "generatedAt": "2026-01-16T18:39:11.584Z",
   "apps": [
     {
       "name": "AceEditor",
@@ -178,26 +178,6 @@
       ]
     },
     {
-      "name": "kaname-apps",
-      "title": "Kaname Apps",
-      "version": "1.0.7",
-      "category": "system",
-      "download": "kaname-apps-1.0.7.wpk",
-      "icon": null,
-      "iconName": "system-software-install",
-      "dependencies": [
-        "settings-application",
-        "store",
-        "appmanager",
-        "preview",
-        "filemanager",
-        "taskmanager",
-        "terminal",
-        "osjs-taskmanager",
-        "textpad"
-      ]
-    },
-    {
       "name": "appmanager",
       "title": "App Manager",
       "version": "1.1.4",
@@ -234,6 +214,25 @@
         "StandardTheme",
         "GnomeIcons",
         "FreedesktopSounds"
+      ]
+    },
+    {
+      "name": "kaname-apps",
+      "title": "Kaname Apps",
+      "version": "1.0.8",
+      "category": "system",
+      "download": "kaname-apps-1.0.8.wpk",
+      "icon": null,
+      "iconName": "system-software-install",
+      "dependencies": [
+        "settings-application",
+        "store",
+        "appmanager",
+        "Preview",
+        "FileManager",
+        "osjs-taskmanager",
+        "Terminal",
+        "TextPad"
       ]
     }
   ]
