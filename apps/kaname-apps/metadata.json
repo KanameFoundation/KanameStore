@@ -1,6 +1,6 @@
 {
     "name": "kaname-apps",
-    "version": "1.0.5",
+    "version": "1.0.7",
     "category": "system",
     "type": "extension",
     "icon": "system-software-install",
@@ -13,7 +13,13 @@
     "dependencies": [
         "settings-application",
         "store",
-        "appmanager"
+        "appmanager",
+        "preview",
+        "filemanager",
+        "taskmanager",
+        "terminal",
+        "osjs-taskmanager",
+        "textpad"
     ],
     "files": [
         "main.js"
