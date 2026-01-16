@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-16T11:29:37.397Z",
+  "generatedAt": "2026-01-16T15:22:06.608Z",
   "apps": [
     {
       "name": "FileManager",
@@ -38,16 +38,6 @@
       "download": "osjs-taskmanager-1.0.0.wpk",
       "icon": null,
       "iconName": "utilities-system-monitor"
-    },
-    {
-      "name": "osjs-desktop",
-      "title": "Desktop Shell",
-      "version": "1.2.0",
-      "description": "KanameOS Desktop Shell",
-      "category": "system",
-      "download": "osjs-desktop-1.2.0.wpk",
-      "icon": null,
-      "iconName": "computer"
     },
     {
       "name": "osjs-notifications",
@@ -138,6 +128,16 @@
       "download": "preview-application-1.1.17.wpk",
       "icon": "icons/preview-application.png",
       "iconName": "image-x-generic"
+    },
+    {
+      "name": "osjs-desktop",
+      "title": "Desktop Shell",
+      "version": "1.2.1",
+      "description": "KanameOS Desktop Shell",
+      "category": "system",
+      "download": "osjs-desktop-1.2.1.wpk",
+      "icon": null,
+      "iconName": "computer"
     }
   ]
 }
