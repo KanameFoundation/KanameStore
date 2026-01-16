@@ -1,94 +1,6 @@
 {
-  "generatedAt": "2026-01-16T17:26:23.688Z",
+  "generatedAt": "2026-01-16T17:37:54.367Z",
   "apps": [
-    {
-      "name": "FileManager",
-      "title": "File Manager",
-      "version": "2.0.0",
-      "category": "utilities",
-      "download": "filemanager-2.0.0.wpk",
-      "icon": null,
-      "iconName": "system-file-manager"
-    },
-    {
-      "name": "SystemControl",
-      "title": "System Control",
-      "version": "1.2.2",
-      "category": "system",
-      "download": "system-control-1.2.2.wpk",
-      "icon": null,
-      "iconName": "preferences-system"
-    },
-    {
-      "name": "Terminal",
-      "title": "Terminal",
-      "version": "1.1.1",
-      "description": "Terminal Application for KanameOS",
-      "category": "utilities",
-      "download": "terminal-1.1.1.wpk",
-      "icon": null,
-      "iconName": "utilities-terminal"
-    },
-    {
-      "name": "osjs-taskmanager",
-      "title": "Task Manager",
-      "version": "1.0.0",
-      "description": "Task Manager",
-      "category": "system",
-      "download": "osjs-taskmanager-1.0.0.wpk",
-      "icon": null,
-      "iconName": "utilities-system-monitor"
-    },
-    {
-      "name": "store",
-      "title": "App Store",
-      "version": "1.0.2",
-      "description": "App Store for KanameOS",
-      "category": "system",
-      "download": "store-1.0.2.wpk",
-      "icon": null,
-      "iconName": "system-software-install"
-    },
-    {
-      "name": "settings-application",
-      "title": "Settings",
-      "version": "1.0.4",
-      "description": "Settings Application for KanameOS",
-      "category": "system",
-      "download": "settings-application-1.0.4.wpk",
-      "icon": null,
-      "iconName": "preferences-system"
-    },
-    {
-      "name": "FreedesktopSounds",
-      "title": "Freedesktop Sounds",
-      "version": "1.0.3",
-      "description": "OS.js Freedesktop Sounds",
-      "category": "Uncategorized",
-      "download": "freedesktopsound-1.0.3.wpk",
-      "icon": null,
-      "iconName": "audio-x-generic"
-    },
-    {
-      "name": "GnomeIcons",
-      "title": "Gnome Icons",
-      "version": "1.0.1",
-      "description": "Gnome Icons for KanameOS",
-      "category": "Uncategorized",
-      "download": "gnome-icons-1.0.1.wpk",
-      "icon": null,
-      "iconName": "application-x-addon"
-    },
-    {
-      "name": "StandardTheme",
-      "title": "Standard Theme",
-      "version": "1.2.2",
-      "description": "Standard Theme for KanameOS",
-      "category": "Uncategorized",
-      "download": "standard-theme-1.2.2.wpk",
-      "icon": null,
-      "iconName": "preferences-desktop-theme"
-    },
     {
       "name": "AceEditor",
       "title": "Ace Editor",
@@ -97,57 +9,8 @@
       "category": "development",
       "download": "ace-application-1.2.7.wpk",
       "icon": "icons/ace-application.png",
-      "iconName": "icon.png"
-    },
-    {
-      "name": "TextPad",
-      "title": "TextPad",
-      "version": "1.2.7",
-      "description": "KanameOS Textpad Application",
-      "category": "utilities",
-      "download": "textpad-application-1.2.7.wpk",
-      "icon": "icons/textpad-application.png",
-      "iconName": "icon.png"
-    },
-    {
-      "name": "osjs-desktop",
-      "title": "Desktop Shell",
-      "version": "1.2.1",
-      "description": "KanameOS Desktop Shell",
-      "category": "system",
-      "download": "osjs-desktop-1.2.1.wpk",
-      "icon": null,
-      "iconName": "computer"
-    },
-    {
-      "name": "osjs-notifications",
-      "title": "Notifications",
-      "version": "1.2.1",
-      "description": "KanameOS Notification System",
-      "category": "system",
-      "download": "osjs-notifications-1.2.1.wpk",
-      "icon": null,
-      "iconName": "dialog-information"
-    },
-    {
-      "name": "osjs-panels",
-      "title": "Panel Settings",
-      "version": "1.4.2",
-      "description": "OS.js Panels",
-      "category": "system",
-      "download": "osjs-panel-1.4.2.wpk",
-      "icon": null,
-      "iconName": "preferences-desktop-display"
-    },
-    {
-      "name": "Wolfenstein3D",
-      "title": "Wolfenstein 3D",
-      "version": "1.0.2",
-      "description": "KanameOS Wolfenstein 3D Application",
-      "category": "games",
-      "download": "wolfenstein3d-application-1.0.2.wpk",
-      "icon": "icons/wolfenstein3d-application.png",
-      "iconName": "icon.png"
+      "iconName": "icon.png",
+      "dependencies": []
     },
     {
       "name": "appmanager",
@@ -157,7 +20,174 @@
       "category": "system",
       "download": "app-manager-1.0.4.wpk",
       "icon": null,
-      "iconName": "system-software-install"
+      "iconName": "system-software-install",
+      "dependencies": []
+    },
+    {
+      "name": "osjs-desktop",
+      "title": "Desktop Shell",
+      "version": "1.2.1",
+      "description": "KanameOS Desktop Shell",
+      "category": "system",
+      "download": "osjs-desktop-1.2.1.wpk",
+      "icon": null,
+      "iconName": "computer",
+      "dependencies": []
+    },
+    {
+      "name": "FileManager",
+      "title": "File Manager",
+      "version": "2.0.0",
+      "category": "utilities",
+      "download": "filemanager-2.0.0.wpk",
+      "icon": null,
+      "iconName": "system-file-manager",
+      "dependencies": []
+    },
+    {
+      "name": "GnomeIcons",
+      "title": "Gnome Icons",
+      "version": "1.0.1",
+      "description": "Gnome Icons for KanameOS",
+      "category": "Uncategorized",
+      "download": "gnome-icons-1.0.1.wpk",
+      "icon": null,
+      "iconName": "application-x-addon",
+      "dependencies": []
+    },
+    {
+      "name": "osjs-notifications",
+      "title": "Notifications",
+      "version": "1.2.1",
+      "description": "KanameOS Notification System",
+      "category": "system",
+      "download": "osjs-notifications-1.2.1.wpk",
+      "icon": null,
+      "iconName": "dialog-information",
+      "dependencies": []
+    },
+    {
+      "name": "osjs-panels",
+      "title": "Panel Settings",
+      "version": "1.4.2",
+      "description": "OS.js Panels",
+      "category": "system",
+      "download": "osjs-panel-1.4.2.wpk",
+      "icon": null,
+      "iconName": "preferences-desktop-display",
+      "dependencies": []
+    },
+    {
+      "name": "settings-application",
+      "title": "Settings",
+      "version": "1.0.4",
+      "description": "Settings Application for KanameOS",
+      "category": "system",
+      "download": "settings-application-1.0.4.wpk",
+      "icon": null,
+      "iconName": "preferences-system",
+      "dependencies": []
+    },
+    {
+      "name": "StandardTheme",
+      "title": "Standard Theme",
+      "version": "1.2.2",
+      "description": "Standard Theme for KanameOS",
+      "category": "Uncategorized",
+      "download": "standard-theme-1.2.2.wpk",
+      "icon": null,
+      "iconName": "preferences-desktop-theme",
+      "dependencies": []
+    },
+    {
+      "name": "store",
+      "title": "App Store",
+      "version": "1.0.2",
+      "description": "App Store for KanameOS",
+      "category": "system",
+      "download": "store-1.0.2.wpk",
+      "icon": null,
+      "iconName": "system-software-install",
+      "dependencies": []
+    },
+    {
+      "name": "SystemControl",
+      "title": "System Control",
+      "version": "1.2.2",
+      "category": "system",
+      "download": "system-control-1.2.2.wpk",
+      "icon": null,
+      "iconName": "preferences-system",
+      "dependencies": []
+    },
+    {
+      "name": "osjs-taskmanager",
+      "title": "Task Manager",
+      "version": "1.0.0",
+      "description": "Task Manager",
+      "category": "system",
+      "download": "osjs-taskmanager-1.0.0.wpk",
+      "icon": null,
+      "iconName": "utilities-system-monitor",
+      "dependencies": []
+    },
+    {
+      "name": "Terminal",
+      "title": "Terminal",
+      "version": "1.1.1",
+      "description": "Terminal Application for KanameOS",
+      "category": "utilities",
+      "download": "terminal-1.1.1.wpk",
+      "icon": null,
+      "iconName": "utilities-terminal",
+      "dependencies": []
+    },
+    {
+      "name": "TextPad",
+      "title": "TextPad",
+      "version": "1.2.7",
+      "description": "KanameOS Textpad Application",
+      "category": "utilities",
+      "download": "textpad-application-1.2.7.wpk",
+      "icon": "icons/textpad-application.png",
+      "iconName": "icon.png",
+      "dependencies": []
+    },
+    {
+      "name": "Wolfenstein3D",
+      "title": "Wolfenstein 3D",
+      "version": "1.0.2",
+      "description": "KanameOS Wolfenstein 3D Application",
+      "category": "games",
+      "download": "wolfenstein3d-application-1.0.2.wpk",
+      "icon": "icons/wolfenstein3d-application.png",
+      "iconName": "icon.png",
+      "dependencies": []
+    },
+    {
+      "name": "FreedesktopSounds",
+      "title": "Freedesktop Sounds",
+      "version": "1.0.3",
+      "description": "OS.js Freedesktop Sounds",
+      "category": "Uncategorized",
+      "download": "freedesktopsound-1.0.3.wpk",
+      "icon": null,
+      "iconName": "audio-x-generic",
+      "dependencies": []
+    },
+    {
+      "name": "kaname-essentials",
+      "title": "Kaname Essentials",
+      "version": "1.0.3",
+      "category": "system",
+      "download": "kaname-essentials-1.0.3.wpk",
+      "icon": null,
+      "iconName": "system-software-install",
+      "dependencies": [
+        "osjs-desktop",
+        "osjs-panels",
+        "osjs-notifications"
+      ]
     },
     {
       "name": "Preview",
@@ -167,16 +197,8 @@
       "category": "graphics",
       "download": "preview-application-1.2.17.wpk",
       "icon": "icons/preview-application.png",
-      "iconName": "image-x-generic"
-    },
-    {
-      "name": "kaname-essentials",
-      "title": "Kaname Essentials",
-      "version": "1.0.2",
-      "category": "system",
-      "download": "kaname-essentials-1.0.2.wpk",
-      "icon": null,
-      "iconName": "system-software-install"
+      "iconName": "image-x-generic",
+      "dependencies": []
     }
   ]
 }
