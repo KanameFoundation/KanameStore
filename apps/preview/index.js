@@ -40,20 +40,20 @@ const view = (core, proc, win, _) =>
     }, [
       state.image ? h(Image, {
         style: {
-          transform: `scale(${state.scale})`,
-          transformOrigin: 'top left',
-          maxWidth: 'none',
-          maxHeight: 'none'
+          width: state.width ? `${state.width * state.scale}px` : 'auto',
+          height: state.height ? `${state.height * state.scale}px` : 'auto',
+          // transform: `scale(${state.scale})`, // Removed to prevent layout ghosting
+          // transformOrigin: 'top left',
         },
         src: state.image.url,
         onload: (ev) => actions.fitToWindow(ev.target)
       }) : null,
       state.video ? h(Video, {
         style: {
-          transform: `scale(${state.scale})`,
-          transformOrigin: 'top left',
-          maxWidth: 'none',
-          maxHeight: 'none'
+          width: state.width ? `${state.width * state.scale}px` : 'auto',
+          height: state.height ? `${state.height * state.scale}px` : 'auto',
+          // transform: `scale(${state.scale})`,
+          // transformOrigin: 'top left',
         },
         src: state.video.url,
         onload: (ev) => actions.fitToWindow(ev.target)
@@ -110,31 +110,48 @@ const register = (core, args, options, metadata) => {
         image: null,
         video: null,
         restore: false,
-        scale: 1
+        scale: 1,
+        width: 0,
+        height: 0
       }, {
         fitToWindow: target => state => {
           const { naturalWidth, naturalHeight, videoWidth, videoHeight } = target;
           const width = naturalWidth || videoWidth || 0;
           const height = naturalHeight || videoHeight || 0;
-          const { offsetWidth, offsetHeight } = win.$content;
 
           if (width > 0 && height > 0) {
-            const scale = Math.min(
-              offsetWidth / width,
-              offsetHeight / height,
-              1
-            );
+            const chromeHeight = 30; // 30px for Menubar
+            const { offsetWidth, offsetHeight } = core.$root;
+            const maxWidth = offsetWidth * 0.85;
+            const maxHeight = offsetHeight * 0.85;
 
-            return { scale: Math.max(0.1, scale) };
+            // Start with natural dimensions
+            let targetWidth = width;
+            let targetHeight = height;
+
+            // Scale down if image is too big
+            if (targetWidth > maxWidth || targetHeight > (maxHeight - chromeHeight)) {
+              const ratio = Math.min(maxWidth / targetWidth, (maxHeight - chromeHeight) / targetHeight);
+              targetWidth *= ratio;
+              targetHeight *= ratio;
+            }
+
+            // Window dimension = image size + chrome
+            win.setDimension({ width: targetWidth, height: targetHeight + chromeHeight });
+            win.setPosition('center');
+
+            // Scale should map image 1:1 to the available space
+            const scale = Math.min(targetWidth / width, targetHeight / height, 1);
+            return { width, height, scale: Math.max(0.1, scale) };
           }
-          return { scale: 1 };
+          return { width: 0, height: 0, scale: 1 };
         },
         zoomIn: () => state => ({ scale: state.scale + 0.1 }),
         zoomOut: () => state => ({ scale: Math.max(0.1, state.scale - 0.1) }),
         zoomReset: () => state => ({ scale: 1 }),
 
-        setVideo: ({ video, restore }) => ({ video, restore, scale: 1 }),
-        setImage: ({ image, restore }) => ({ image, restore, scale: 1 }),
+        setVideo: ({ video, restore }) => ({ video, restore, scale: 1, width: 0, height: 0 }),
+        setImage: ({ image, restore }) => ({ image, restore, scale: 1, width: 0, height: 0 }),
         menu: (ev) => {
           core.make('osjs/contextmenu').show({
             menu: [
