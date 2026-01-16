@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-16T16:12:40.228Z",
+  "generatedAt": "2026-01-16T16:30:54.911Z",
   "apps": [
     {
       "name": "FileManager",
@@ -38,26 +38,6 @@
       "download": "osjs-taskmanager-1.0.0.wpk",
       "icon": null,
       "iconName": "utilities-system-monitor"
-    },
-    {
-      "name": "osjs-notifications",
-      "title": "Notifications",
-      "version": "1.2.0",
-      "description": "KanameOS Notification System",
-      "category": "system",
-      "download": "osjs-notifications-1.2.0.wpk",
-      "icon": null,
-      "iconName": "dialog-information"
-    },
-    {
-      "name": "osjs-panels",
-      "title": "Panels Service",
-      "version": "1.4.1",
-      "description": "OS.js Panels",
-      "category": "system",
-      "download": "osjs-panel-1.4.1.wpk",
-      "icon": null,
-      "iconName": "preferences-desktop-display"
     },
     {
       "name": "store",
@@ -120,16 +100,6 @@
       "iconName": "image-x-generic"
     },
     {
-      "name": "osjs-desktop",
-      "title": "Desktop Shell",
-      "version": "1.2.1",
-      "description": "KanameOS Desktop Shell",
-      "category": "system",
-      "download": "osjs-desktop-1.2.1.wpk",
-      "icon": null,
-      "iconName": "computer"
-    },
-    {
       "name": "AceEditor",
       "title": "Ace Editor",
       "version": "1.2.7",
@@ -158,6 +128,36 @@
       "download": "app-manager-1.0.3.wpk",
       "icon": null,
       "iconName": "system-software-install"
+    },
+    {
+      "name": "osjs-desktop",
+      "title": "Desktop Shell",
+      "version": "1.2.1",
+      "description": "KanameOS Desktop Shell",
+      "category": "system",
+      "download": "osjs-desktop-1.2.1.wpk",
+      "icon": null,
+      "iconName": "computer"
+    },
+    {
+      "name": "osjs-notifications",
+      "title": "Notifications",
+      "version": "1.2.1",
+      "description": "KanameOS Notification System",
+      "category": "system",
+      "download": "osjs-notifications-1.2.1.wpk",
+      "icon": null,
+      "iconName": "dialog-information"
+    },
+    {
+      "name": "osjs-panels",
+      "title": "Panel Settings",
+      "version": "1.4.2",
+      "description": "OS.js Panels",
+      "category": "system",
+      "download": "osjs-panel-1.4.2.wpk",
+      "icon": null,
+      "iconName": "preferences-desktop-display"
     }
   ]
 }
