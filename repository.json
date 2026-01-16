@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-16T16:06:06.099Z",
+  "generatedAt": "2026-01-16T16:12:40.228Z",
   "apps": [
     {
       "name": "FileManager",
@@ -66,16 +66,6 @@
       "description": "App Store for KanameOS",
       "category": "system",
       "download": "store-1.0.2.wpk",
-      "icon": null,
-      "iconName": "system-software-install"
-    },
-    {
-      "name": "appmanager",
-      "title": "App Manager",
-      "version": "1.0.2",
-      "description": "Application Manager for KanameOS",
-      "category": "system",
-      "download": "app-manager-1.0.2.wpk",
       "icon": null,
       "iconName": "system-software-install"
     },
@@ -158,6 +148,16 @@
       "download": "textpad-application-1.2.7.wpk",
       "icon": "icons/textpad-application.png",
       "iconName": "icon.png"
+    },
+    {
+      "name": "appmanager",
+      "title": "App Manager",
+      "version": "1.0.3",
+      "description": "Application Manager for KanameOS",
+      "category": "system",
+      "download": "app-manager-1.0.3.wpk",
+      "icon": null,
+      "iconName": "system-software-install"
     }
   ]
 }
