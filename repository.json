@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-16T18:42:59.576Z",
+  "generatedAt": "2026-01-16T19:16:17.037Z",
   "apps": [
     {
       "name": "AceEditor",
@@ -132,17 +132,6 @@
       "dependencies": []
     },
     {
-      "name": "Wolfenstein3D",
-      "title": "Wolfenstein 3D",
-      "version": "1.0.2",
-      "description": "KanameOS Wolfenstein 3D Application",
-      "category": "games",
-      "download": "wolfenstein3d-application-1.0.2.wpk",
-      "icon": "icons/wolfenstein3d-application.png",
-      "iconName": "icon.png",
-      "dependencies": []
-    },
-    {
       "name": "FreedesktopSounds",
       "title": "Freedesktop Sounds",
       "version": "1.0.3",
@@ -234,6 +223,17 @@
         "kaname-apps",
         "kaname-essentials"
       ]
+    },
+    {
+      "name": "Wolfenstein3D",
+      "title": "Wolfenstein 3D",
+      "version": "1.0.2",
+      "description": "KanameOS Wolfenstein 3D Application",
+      "category": "games",
+      "download": "wolfenstein3d-application-1.0.2.wpk",
+      "icon": "icons/wolfenstein3d-application.png",
+      "iconName": "icon.png",
+      "dependencies": []
     }
   ]
 }
