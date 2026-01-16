@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-16T17:37:54.367Z",
+  "generatedAt": "2026-01-16T17:41:19.073Z",
   "apps": [
     {
       "name": "AceEditor",
@@ -176,20 +176,6 @@
       "dependencies": []
     },
     {
-      "name": "kaname-essentials",
-      "title": "Kaname Essentials",
-      "version": "1.0.3",
-      "category": "system",
-      "download": "kaname-essentials-1.0.3.wpk",
-      "icon": null,
-      "iconName": "system-software-install",
-      "dependencies": [
-        "osjs-desktop",
-        "osjs-panels",
-        "osjs-notifications"
-      ]
-    },
-    {
       "name": "Preview",
       "title": "Preview",
       "version": "1.2.17",
@@ -199,6 +185,20 @@
       "icon": "icons/preview-application.png",
       "iconName": "image-x-generic",
       "dependencies": []
+    },
+    {
+      "name": "kaname-essentials",
+      "title": "Kaname Essentials",
+      "version": "1.0.4",
+      "category": "system",
+      "download": "kaname-essentials-1.0.4.wpk",
+      "icon": null,
+      "iconName": "system-software-install",
+      "dependencies": [
+        "osjs-desktop",
+        "osjs-panels",
+        "osjs-notifications"
+      ]
     }
   ]
 }
