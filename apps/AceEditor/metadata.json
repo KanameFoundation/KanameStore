@@ -1,0 +1,22 @@
+{
+    "name": "AceEditor",
+    "category": "development",
+    "version": "1.2.7",
+    "icon": "icon.png",
+    "title": {
+        "en_EN": "Ace Editor"
+    },
+    "description": {
+        "en_EN": "Ace Editor"
+    },
+    "mimes": [
+        "^text/",
+        "^application/javascript",
+        "^application/json",
+        "^application/x-python",
+        "^application/xml"
+    ],
+    "files": [
+        "main.js"
+    ]
+}
