@@ -69,11 +69,7 @@ const createView = (core) => (state, actions) => {
                 : null,
               h("div", { style: { flex: 1 } }, [
                 h("span", { style: { fontWeight: "bold" } }, pkg.name),
-                h(
-                  "span",
-                  { style: { marginLeft: "10px" } },
-                  pkg.description ? pkg.description.en_EN : ""
-                ),
+
               ]),
               h(
                 Button,
