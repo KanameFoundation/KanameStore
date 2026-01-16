@@ -56,7 +56,7 @@ const register = (core, args, options, metadata) => {
             const iframe = document.createElement('iframe');
             iframe.style.width = '100%';
             iframe.style.height = '100%';
-            iframe.src = proc.resource('/html5-wolfenstein3D/index.html');
+            iframe.src = proc.resource('/game.html');
             iframe.setAttribute('border', '0');
             $content.appendChild(iframe);
 
