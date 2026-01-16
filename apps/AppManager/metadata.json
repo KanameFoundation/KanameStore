@@ -1,6 +1,6 @@
 {
   "name": "appmanager",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "title": {
     "en_EN": "App Manager"
   },
@@ -8,7 +8,9 @@
     "en_EN": "Install and manage applications"
   },
   "category": "system",
-  "mimes": ["application/webpackage"],
+  "mimes": [
+    "application/webpackage"
+  ],
   "icon": "system-software-install",
   "files": [
     "main.js",

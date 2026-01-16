@@ -59,13 +59,13 @@ const createView = (core) => (state, actions) => {
             [
               icon
                 ? h("img", {
-                    src: icon,
-                    style: {
-                      width: "32px",
-                      height: "32px",
-                      marginRight: "10px",
-                    },
-                  })
+                  src: icon,
+                  style: {
+                    width: "32px",
+                    height: "32px",
+                    marginRight: "10px",
+                  },
+                })
                 : null,
               h("div", { style: { flex: 1 } }, [
                 h("span", { style: { fontWeight: "bold" } }, pkg.name),
@@ -226,7 +226,7 @@ const register = (core, args, options, metadata) => {
                           "osjs/dialog",
                           "alert",
                           { title: "Error", message: result.error },
-                          () => {}
+                          () => { }
                         );
                       }
                     })
@@ -236,7 +236,7 @@ const register = (core, args, options, metadata) => {
                         "osjs/dialog",
                         "alert",
                         { title: "Error", message: err.message },
-                        () => {}
+                        () => { }
                       );
                     });
                 },
@@ -350,21 +350,21 @@ const register = (core, args, options, metadata) => {
           },
           toggleAutostart:
             ({ name, enabled }) =>
-            (state, actions) => {
-              const settings = core.make("osjs/settings");
-              const whitelist = settings.get("osjs/packages", "autostart", [
-                "osjs-desktop",
-                "osjs-panels",
-                "osjs-notifications",
-              ]);
-              const newList = enabled
-                ? [...whitelist, name]
-                : whitelist.filter((n) => n !== name);
+              (state, actions) => {
+                const settings = core.make("osjs/settings");
+                const whitelist = settings.get("osjs/packages", "autostart", [
+                  "osjs-desktop",
+                  "osjs-panels",
+                  "osjs-notifications",
+                ]);
+                const newList = enabled
+                  ? [...whitelist, name]
+                  : whitelist.filter((n) => n !== name);
 
-              settings.set("osjs/packages", "autostart", newList);
-              settings.save();
-              actions.setAutostartList(newList);
-            },
+                settings.set("osjs/packages", "autostart", newList);
+                settings.save();
+                actions.setAutostartList(newList);
+              },
           openInstallDialog: () => (state, actions) => {
             core.make(
               "osjs/dialog",
@@ -395,7 +395,7 @@ const register = (core, args, options, metadata) => {
                 message: "Please wait while the package is being installed.",
                 buttons: [],
               },
-              () => {}
+              () => { }
             );
 
             fetch("/packages/install", {
@@ -448,7 +448,7 @@ const register = (core, args, options, metadata) => {
                     "osjs/dialog",
                     "alert",
                     { title: "Error", message: result.error },
-                    () => {}
+                    () => { }
                   );
                 }
               })
@@ -458,7 +458,7 @@ const register = (core, args, options, metadata) => {
                   "osjs/dialog",
                   "alert",
                   { title: "Error", message: err.message },
-                  () => {}
+                  () => { }
                 );
               });
           },
@@ -479,13 +479,14 @@ const register = (core, args, options, metadata) => {
                     },
                     body: JSON.stringify({ name }),
                   })
+                    .then((res) => res.json())
                     .then((result) => {
                       if (result.success) {
                         core.make(
                           "osjs/dialog",
                           "alert",
                           { title: "Success", message: `Uninstalled ${name}` },
-                          () => {}
+                          () => { }
                         );
                         actions.loadPackages();
                       } else {
@@ -493,7 +494,7 @@ const register = (core, args, options, metadata) => {
                           "osjs/dialog",
                           "alert",
                           { title: "Error", message: result.error },
-                          () => {}
+                          () => { }
                         );
                       }
                     })
@@ -502,7 +503,7 @@ const register = (core, args, options, metadata) => {
                         "osjs/dialog",
                         "alert",
                         { title: "Error", message: err.message },
-                        () => {}
+                        () => { }
                       );
                     });
                 }
