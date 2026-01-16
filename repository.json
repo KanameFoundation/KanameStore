@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-16T18:18:54.750Z",
+  "generatedAt": "2026-01-16T18:27:10.091Z",
   "apps": [
     {
       "name": "AceEditor",
@@ -187,20 +187,6 @@
       "dependencies": []
     },
     {
-      "name": "kaname-apps",
-      "title": "Kaname Apps",
-      "version": "1.0.5",
-      "category": "system",
-      "download": "kaname-apps-1.0.5.wpk",
-      "icon": null,
-      "iconName": "system-software-install",
-      "dependencies": [
-        "settings-application",
-        "store",
-        "appmanager"
-      ]
-    },
-    {
       "name": "kaname-essentials",
       "title": "Kaname Essentials",
       "version": "1.1.5",
@@ -228,6 +214,26 @@
       "dependencies": [
         "kaname-apps",
         "kaname-essentials"
+      ]
+    },
+    {
+      "name": "kaname-apps",
+      "title": "Kaname Apps",
+      "version": "1.0.7",
+      "category": "system",
+      "download": "kaname-apps-1.0.7.wpk",
+      "icon": null,
+      "iconName": "system-software-install",
+      "dependencies": [
+        "settings-application",
+        "store",
+        "appmanager",
+        "preview",
+        "filemanager",
+        "taskmanager",
+        "terminal",
+        "osjs-taskmanager",
+        "textpad"
       ]
     }
   ]
