@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-16T16:30:54.911Z",
+  "generatedAt": "2026-01-16T16:33:16.703Z",
   "apps": [
     {
       "name": "FileManager",
@@ -158,6 +158,16 @@
       "download": "osjs-panel-1.4.2.wpk",
       "icon": null,
       "iconName": "preferences-desktop-display"
+    },
+    {
+      "name": "Wolfenstein3D",
+      "title": "Wolfenstein 3D",
+      "version": "1.0.2",
+      "description": "KanameOS Wolfenstein 3D Application",
+      "category": "games",
+      "download": "wolfenstein3d-application-1.0.2.wpk",
+      "icon": "icons/wolfenstein3d-application.png",
+      "iconName": "icon.png"
     }
   ]
 }
