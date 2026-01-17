@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-17T08:36:32.608Z",
+  "generatedAt": "2026-01-17T08:42:09.202Z",
   "apps": [
     {
       "name": "FileManager",
@@ -238,10 +238,10 @@
     {
       "name": "TinyCrate",
       "title": "TinyCrate",
-      "version": "2025.04.29.001",
+      "version": "2025.04.29.002",
       "description": "KanameOS TinyCrate Application",
       "category": "games",
-      "download": "tinycrate-application-2025.04.29.001.wpk",
+      "download": "tinycrate-application-2025.04.29.002.wpk",
       "icon": "icons/tinycrate-application.png",
       "iconName": "icon.png",
       "dependencies": []
