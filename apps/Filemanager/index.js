@@ -30,11 +30,11 @@
 
 // TODO: Check if host-system:/ '..' is an issue here
 
-import {h, app} from 'hyperapp';
+import { h, app } from 'hyperapp';
 
 import './index.scss';
 import * as translations from './locales.js';
-import {name as applicationName} from './metadata.json';
+import { name as applicationName } from './metadata.json';
 import {
   Box,
   Button,
@@ -50,7 +50,7 @@ import {
 /**
  * Creates default settings
  */
-const createDefaultSettings =  () => ({
+const createDefaultSettings = () => ({
   showHiddenFiles: false,
   showDate: false
 });
@@ -59,7 +59,7 @@ const createDefaultSettings =  () => ({
  * Creates the default window options
  */
 const createWindowOptions = (core, proc, title) => {
-  const {icon} = core.make('osjs/theme');
+  const { icon } = core.make('osjs/theme');
 
   return {
     id: 'FileManager',
@@ -120,12 +120,12 @@ const isSpecialFile = filename => ['..', '.'].indexOf(filename) !== -1;
  * Creates initial paths
  */
 const createInitialPaths = (core, proc) => {
-  const homePath = {path: core.config('vfs.defaultPath', 'home:/')};
+  const homePath = { path: core.config('vfs.defaultPath', 'home:/') };
   const initialPath = proc.args.path
     ? Object.assign({}, homePath, proc.args.path)
     : homePath;
 
-  return {homePath, initialPath};
+  return { homePath, initialPath };
 };
 
 const getDirectoryCount = files =>
@@ -139,7 +139,7 @@ const getTotalSize = files =>
  * Formats directory status message
  */
 const formatStatusMessage = (core, files) => {
-  const {translatable} = core.make('osjs/locale');
+  const { translatable } = core.make('osjs/locale');
   const __ = translatable(translations);
 
   return (path, files) => {
@@ -179,7 +179,7 @@ const mountViewRowsFactory = (core) => {
  * File view columns Factory
  */
 const listViewColumnFactory = (core, proc) => {
-  const {translate: _, translatable} = core.make('osjs/locale');
+  const { translate: _, translatable } = core.make('osjs/locale');
   const __ = translatable(translations);
 
   return () => {
@@ -219,7 +219,7 @@ const listViewColumnFactory = (core, proc) => {
  */
 const listViewRowFactory = (core, proc) => {
   const fs = core.make('osjs/fs');
-  const {format: formatDate} = core.make('osjs/locale');
+  const { format: formatDate } = core.make('osjs/locale');
   const getFileIcon = file => file.icon || fs.icon(file);
 
   const formattedDate = f => {
@@ -265,8 +265,8 @@ const listViewRowFactory = (core, proc) => {
  */
 const vfsActionFactory = (core, proc, win, dialog, state) => {
   const vfs = core.make('osjs/vfs');
-  const {pathJoin} = core.make('osjs/fs');
-  const {translatable} = core.make('osjs/locale');
+  const { pathJoin } = core.make('osjs/fs');
+  const { translatable } = core.make('osjs/locale');
   const __ = translatable(translations);
 
   const refresh = (fileOrWatch) => {
@@ -320,9 +320,9 @@ const vfsActionFactory = (core, proc, win, dialog, state) => {
   };
 
   const uploadVirtualFile = (data) => {
-    const dest = {path: pathJoin(state.currentPath.path, data.filename)};
+    const dest = { path: pathJoin(state.currentPath.path, data.filename) };
     if (dest.path !== data.path) {
-      action(() => vfs.copy(data, dest, {pid: proc.pid}), true, __('MSG_UPLOAD_ERROR'));
+      action(() => vfs.copy(data, dest, { pid: proc.pid }), true, __('MSG_UPLOAD_ERROR'));
     }
   };
 
@@ -353,11 +353,11 @@ const vfsActionFactory = (core, proc, win, dialog, state) => {
 
       if (typeof history === 'undefined' || history === false) {
         win.emit('filemanager:historyPush', dir);
-      } else if (history ===  'clear') {
+      } else if (history === 'clear') {
         win.emit('filemanager:historyClear');
       }
 
-      win.emit('filemanager:readdir', {list, path: dir.path, selectFile});
+      win.emit('filemanager:readdir', { list, path: dir.path, selectFile });
       win.emit('filemanager:title', dir.path);
     } catch (error) {
       dialog('error', error, __('MSG_READDIR_ERROR', dir.path));
@@ -373,15 +373,15 @@ const vfsActionFactory = (core, proc, win, dialog, state) => {
       .catch(error => dialog('error', error, __('MSG_UPLOAD_ERROR')));
   });
 
-  const paste = (move, currentPath) => ({items, callback}) => {
+  const paste = (move, currentPath) => ({ items, callback }) => {
     const promises = items.map(item => {
       const dest = {
         path: pathJoin(currentPath.path, item.filename)
       };
 
       return move
-        ? vfs.move(item, dest, {pid: proc.pid})
-        : vfs.copy(item, dest, {pid: proc.pid});
+        ? vfs.move(item, dest, { pid: proc.pid })
+        : vfs.copy(item, dest, { pid: proc.pid });
     });
 
     return Promise
@@ -415,10 +415,10 @@ const vfsActionFactory = (core, proc, win, dialog, state) => {
 const clipboardActionFactory = (core, state, vfs) => {
   const clipboard = core.make('osjs/clipboard');
 
-  const set = item => clipboard.set(({item}), 'filemanager:copy');
+  const set = items => clipboard.set(({ items }), 'filemanager:copy');
 
-  const cut = item => clipboard.set(({
-    item,
+  const cut = items => clipboard.set(({
+    items,
     callback: () => core.config('vfs.watch') ? undefined : vfs.refresh(true)
   }), 'filemanager:move');
 
@@ -430,7 +430,7 @@ const clipboardActionFactory = (core, state, vfs) => {
     }
   };
 
-  return {set, cut, paste};
+  return { set, cut, paste };
 };
 
 /**
@@ -438,13 +438,13 @@ const clipboardActionFactory = (core, state, vfs) => {
  */
 const dialogFactory = (core, proc, win) => {
   const vfs = core.make('osjs/vfs');
-  const {pathJoin} = core.make('osjs/fs');
-  const {translatable} = core.make('osjs/locale');
+  const { pathJoin } = core.make('osjs/fs');
+  const { translatable } = core.make('osjs/locale');
   const __ = translatable(translations);
 
   const dialog = (name, args, cb, modal = true) => core.make('osjs/dialog', name, args, {
     parent: win,
-    attributes: {modal}
+    attributes: { modal }
   }, cb);
 
   const mkdirDialog = (action, currentPath) => dialog('prompt', {
@@ -453,7 +453,7 @@ const dialogFactory = (core, proc, win) => {
   }, usingPositiveButton(value => {
     const newPath = pathJoin(currentPath.path, value);
     action(
-      () => vfs.mkdir({path: newPath}, {pid: proc.pid}),
+      () => vfs.mkdir({ path: newPath }, { pid: proc.pid }),
       value,
       __('MSG_MKDIR_ERROR')
     );
@@ -467,7 +467,7 @@ const dialogFactory = (core, proc, win) => {
       const idx = file.path.lastIndexOf(file.filename);
       const newPath = file.path.substr(0, idx) + value;
 
-      action(() => vfs.rename(file, {path: newPath}), value, __('MSG_RENAME_ERROR'));
+      action(() => vfs.rename(file, { path: newPath }), value, __('MSG_RENAME_ERROR'));
     })));
 
   const deleteDialog = (action, files) => dialog('confirm', {
@@ -475,7 +475,7 @@ const dialogFactory = (core, proc, win) => {
   }, usingPositiveButton(() => {
     action(
       () => Promise.all(
-        files.map(file => vfs.unlink(file, {pid: proc.pid}))
+        files.map(file => vfs.unlink(file, { pid: proc.pid }))
       ),
       true,
       __('MSG_DELETE_ERROR')
@@ -485,13 +485,13 @@ const dialogFactory = (core, proc, win) => {
   const progressDialog = (file) => dialog('progress', {
     message: __('DIALOG_PROGRESS_MESSAGE', file.name),
     buttons: []
-  }, () => {}, false);
+  }, () => { }, false);
 
   const errorDialog = (error, message) => dialog('alert', {
     type: 'error',
     error,
     message
-  }, () => {});
+  }, () => { });
 
   const dialogs = {
     mkdir: mkdirDialog,
@@ -517,7 +517,7 @@ const menuFactory = (core, proc, win) => {
   const fs = core.make('osjs/fs');
   const clipboard = core.make('osjs/clipboard');
   const contextmenu = core.make('osjs/contextmenu');
-  const {translate: _, translatable} = core.make('osjs/locale');
+  const { translate: _, translatable } = core.make('osjs/locale');
 
   const __ = translatable(translations);
   const getMountpoints = () => fs.mountpoints(true);
@@ -540,9 +540,9 @@ const menuFactory = (core, proc, win) => {
   };
 
   const createFileMenu = () => ([
-    {label: _('LBL_UPLOAD'), onclick: () => win.emit('filemanager:menu:upload')},
-    {label: _('LBL_MKDIR'), onclick: () => win.emit('filemanager:menu:mkdir')},
-    {label: _('LBL_QUIT'), onclick: () => win.emit('filemanager:menu:quit')}
+    { label: _('LBL_UPLOAD'), onclick: () => win.emit('filemanager:menu:upload') },
+    { label: _('LBL_MKDIR'), onclick: () => win.emit('filemanager:menu:mkdir') },
+    { label: _('LBL_QUIT'), onclick: () => win.emit('filemanager:menu:quit') }
   ]);
 
   const createEditMenu = async (items, isContextMenu) => {
@@ -594,7 +594,7 @@ const menuFactory = (core, proc, win) => {
       });
     }
 
-    const appendItems = await menuItemsFromMiddleware('edit', {file: item, isContextMenu});
+    const appendItems = await menuItemsFromMiddleware('edit', { file: item, isContextMenu });
     const configuredItems = [];
 
     if (core.config('filemanager.disableDownload', false) !== true) {
@@ -624,16 +624,16 @@ const menuFactory = (core, proc, win) => {
   };
 
   const createViewMenu = (state) => ([
-    {label: _('LBL_REFRESH'), onclick: () => win.emit('filemanager:menu:refresh')},
-    {label: __('LBL_MINIMALISTIC'), checked: state.minimalistic, onclick: () => win.emit('filemanager:menu:toggleMinimalistic')},
-    {label: __('LBL_SHOW_DATE'), checked: proc.settings.showDate, onclick: () => win.emit('filemanager:menu:showDate')},
-    {label: __('LBL_SHOW_HIDDEN_FILES'), checked: proc.settings.showHiddenFiles, onclick: () => win.emit('filemanager:menu:showHidden')}
+    { label: _('LBL_REFRESH'), onclick: () => win.emit('filemanager:menu:refresh') },
+    { label: __('LBL_MINIMALISTIC'), checked: state.minimalistic, onclick: () => win.emit('filemanager:menu:toggleMinimalistic') },
+    { label: __('LBL_SHOW_DATE'), checked: proc.settings.showDate, onclick: () => win.emit('filemanager:menu:showDate') },
+    { label: __('LBL_SHOW_HIDDEN_FILES'), checked: proc.settings.showHiddenFiles, onclick: () => win.emit('filemanager:menu:showHidden') }
   ]);
 
   const createGoMenu = () => getMountpoints().map(m => ({
     label: m.label,
     icon: m.icon,
-    onclick: () => win.emit('filemanager:navigate', {path: m.root})
+    onclick: () => win.emit('filemanager:navigate', { path: m.root })
   }));
 
   const menuItems = {
@@ -643,7 +643,7 @@ const menuFactory = (core, proc, win) => {
     go: createGoMenu
   };
 
-  return async ({name, ev}, args, isContextMenu = false) => {
+  return async ({ name, ev }, args, isContextMenu = false) => {
     if (menuItems[name]) {
       contextmenu.show({
         menu: await menuItems[name](args, isContextMenu),
@@ -659,14 +659,14 @@ const menuFactory = (core, proc, win) => {
  * Creates a new FileManager user interface view
  */
 const createView = (core, proc, win) => {
-  const {icon} = core.make('osjs/theme');
-  const {translate: _} = core.make('osjs/locale');
+  const { icon } = core.make('osjs/theme');
+  const { translate: _ } = core.make('osjs/locale');
 
-  const onMenuClick = (name, args) => ev => win.emit('filemanager:menu', {ev, name}, args);
-  const onInputEnter = (ev, value) => win.emit('filemanager:navigate', {path: value});
+  const onMenuClick = (name, args) => ev => win.emit('filemanager:menu', { ev, name }, args);
+  const onInputEnter = (ev, value) => win.emit('filemanager:navigate', { path: value });
 
-  const canGoBack = ({list, index}) => !list.length || index <= 0;
-  const canGoForward = ({list, index}) => !list.length || (index === list.length - 1);
+  const canGoBack = ({ list, index }) => !list.length || index <= 0;
+  const canGoForward = ({ list, index }) => !list.length || (index === list.length - 1);
 
   return (state, actions) => {
     const FileView = listView.component(state.fileview, actions.fileview);
@@ -676,10 +676,10 @@ const createView = (core, proc, win) => {
       class: state.minimalistic ? 'osjs-filemanager-minimalistic' : ''
     }, [
       h(Menubar, {}, [
-        h(MenubarItem, {onclick: onMenuClick('file')}, _('LBL_FILE')),
-        h(MenubarItem, {onclick: onMenuClick('edit')}, _('LBL_EDIT')),
-        h(MenubarItem, {onclick: onMenuClick('view', state)}, _('LBL_VIEW')),
-        h(MenubarItem, {onclick: onMenuClick('go')}, _('LBL_GO'))
+        h(MenubarItem, { onclick: onMenuClick('file') }, _('LBL_FILE')),
+        h(MenubarItem, { onclick: onMenuClick('edit') }, _('LBL_EDIT')),
+        h(MenubarItem, { onclick: onMenuClick('view', state) }, _('LBL_VIEW')),
+        h(MenubarItem, { onclick: onMenuClick('go') }, _('LBL_GO'))
       ]),
       h(Toolbar, {}, [
         h(Button, {
@@ -701,11 +701,11 @@ const createView = (core, proc, win) => {
         }),
         h(TextField, {
           value: state.path,
-          box: {grow: 1, shrink: 1},
+          box: { grow: 1, shrink: 1 },
           onenter: onInputEnter
         })
       ]),
-      h(Panes, {style: {flex: '1 1'}}, [
+      h(Panes, { style: { flex: '1 1' } }, [
         h(MountView),
         h(FileView)
       ]),
@@ -721,7 +721,7 @@ const createApplication = (core, proc) => {
   const createColumns = listViewColumnFactory(core, proc);
   const createRows = listViewRowFactory(core, proc);
   const createMounts = mountViewRowsFactory(core);
-  const {draggable} = core.make('osjs/dnd');
+  const { draggable } = core.make('osjs/dnd');
 
   const initialState = {
     path: '',
@@ -749,37 +749,37 @@ const createApplication = (core, proc) => {
 
   const createActions = (win) => ({
     history: {
-      clear: () => ({index: -1, list: []}),
+      clear: () => ({ index: -1, list: [] }),
 
-      push: (path) => ({index, list}) => {
+      push: (path) => ({ index, list }) => {
         const newList = index === -1 ? [] : list;
         const lastHistory = newList[newList.length - 1];
         const newIndex = lastHistory === path
           ? newList.length - 1
           : newList.push(path) - 1;
 
-        return {list: newList, index: newIndex};
+        return { list: newList, index: newIndex };
       },
 
-      back: () => ({index, list}) => {
+      back: () => ({ index, list }) => {
         const newIndex = Math.max(0, index - 1);
         win.emit('filemanager:navigate', list[newIndex], true);
-        return {index: newIndex};
+        return { index: newIndex };
       },
 
-      forward: () => ({index, list}) => {
+      forward: () => ({ index, list }) => {
         const newIndex = Math.min(list.length - 1, index + 1);
         win.emit('filemanager:navigate', list[newIndex], true);
-        return {index: newIndex};
+        return { index: newIndex };
       }
     },
 
-    toggleMinimalistic: () => ({minimalistic}) => ({minimalistic: !minimalistic}),
+    toggleMinimalistic: () => ({ minimalistic }) => ({ minimalistic: !minimalistic }),
 
-    setPath: path => ({path}),
-    setStatus: status => ({status}),
-    setMinimalistic: minimalistic => ({minimalistic}),
-    setList: ({list, path, selectFile}) => ({fileview, mountview}) => {
+    setPath: path => ({ path }),
+    setStatus: status => ({ status }),
+    setMinimalistic: minimalistic => ({ minimalistic }),
+    setList: ({ list, path, selectFile }) => ({ fileview, mountview }) => {
       let selectedIndex = [];
 
       if (selectFile) {
@@ -804,19 +804,19 @@ const createApplication = (core, proc) => {
     },
 
     mountview: listView.actions({
-      select: ({data}) => win.emit('filemanager:navigate', {path: data.root})
+      select: ({ data }) => win.emit('filemanager:navigate', { path: data.root })
     }),
 
     fileview: listView.actions({
-      select: ({data}) => win.emit('filemanager:select', data),
-      activate: ({data}) =>
+      select: ({ data }) => win.emit('filemanager:select', data),
+      activate: ({ data }) =>
         (Array.isArray(data) ? data : [data]).forEach(item =>
           win.emit(`filemanager:${item.isFile ? 'open' : 'navigate'}`, item)
         ),
       contextmenu: args => win.emit('filemanager:contextmenu', args),
-      created: ({el, data}) => {
+      created: ({ el, data }) => {
         if (data.isFile) {
-          draggable(el, {data});
+          draggable(el, { data });
         }
       }
     })
@@ -834,8 +834,8 @@ const createApplication = (core, proc) => {
  */
 const createWindow = (core, proc) => {
   let wired;
-  const state = {currentFile: [], currentPath: undefined};
-  const {homePath, initialPath} = createInitialPaths(core, proc);
+  const state = { currentFile: [], currentPath: undefined };
+  const { homePath, initialPath } = createInitialPaths(core, proc);
 
   const title = core.make('osjs/locale').translatableFlat(proc.metadata.title);
   const win = proc.createWindow(createWindowOptions(core, proc, title));
@@ -855,7 +855,7 @@ const createWindow = (core, proc) => {
   const onNavigate = (...args) => vfs.readdir(...args);
   const onSelectItem = files => (state.currentFile = files);
   const onSelectStatus = files => win.emit('filemanager:status', formatStatusMessage(core)(state.currentPath, Array.isArray(files) ? files : [files]));
-  const onContextMenu = ({ev, data}) => createMenu({ev, name: 'edit'}, data ? (Array.isArray(data) ? data : [data]) : [], true);
+  const onContextMenu = ({ ev, data }) => createMenu({ ev, name: 'edit' }, data ? (Array.isArray(data) ? data : [data]) : [], true);
   const onReaddirRender = args => wired.setList(args);
   const onRefresh = (...args) => vfs.refresh(...args);
   const onOpen = files => {
@@ -864,7 +864,7 @@ const createWindow = (core, proc) => {
     }
 
     return files.forEach(
-      file => core.open(file, {useDefault: true})
+      file => core.open(file, { useDefault: true })
     );
   };
   const onOpenWith = files => {
@@ -873,12 +873,15 @@ const createWindow = (core, proc) => {
     }
 
     return files.forEach(
-      file => core.open(file, {useDefault: true, forceDialog: true})
+      file => core.open(file, { useDefault: true, forceDialog: true })
     );
   };
   const onHistoryPush = file => wired.history.push(file);
   const onHistoryClear = () => wired.history.clear();
-  const onMenu = (props, args) => createMenu(props, args || state.currentFile);
+  const onMenu = (props, args) => {
+    const files = args || state.currentFile;
+    createMenu(props, Array.isArray(files) ? files : [files]);
+  };
   const onMenuUpload = (...args) => vfs.upload(...args);
   const onMenuMkdir = () => dialog('mkdir', vfs.action, state.currentPath);
   const onMenuQuit = () => proc.destroy();
@@ -950,7 +953,7 @@ const createProcess = (core, args, options, metadata) => {
   };
 
   const onSetting = (key, value) => {
-    onSettingsUpdate({[key]: value});
+    onSettingsUpdate({ [key]: value });
 
     proc.saveSettings()
       .then(() => core.broadcast('osjs:filemanager:remote', proc.settings))

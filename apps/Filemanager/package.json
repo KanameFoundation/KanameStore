@@ -6,7 +6,8 @@
     "type": "application"
   },
   "scripts": {
-    "build": "rspack"
+    "build": "rspack",
+    "watch": "rspack --watch"
   },
   "devDependencies": {
     "@rspack/cli": "^1.0.0",
