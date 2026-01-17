@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-17T06:34:33.186Z",
+  "generatedAt": "2026-01-17T07:00:23.415Z",
   "apps": [
     {
       "name": "AceEditor",
@@ -165,17 +165,6 @@
       "dependencies": []
     },
     {
-      "name": "store",
-      "title": "App Store",
-      "version": "1.2.2",
-      "description": "App Store for KanameOS",
-      "category": "system",
-      "download": "store-1.2.2.wpk",
-      "icon": null,
-      "iconName": "system-software-install",
-      "dependencies": []
-    },
-    {
       "name": "kaname-essentials",
       "title": "Kaname Essentials",
       "version": "1.1.6",
@@ -233,6 +222,17 @@
       "download": "wolfenstein3d-application-1.1.5.wpk",
       "icon": "icons/wolfenstein3d-application.png",
       "iconName": "icon.png",
+      "dependencies": []
+    },
+    {
+      "name": "store",
+      "title": "App Store",
+      "version": "1.3.2",
+      "description": "App Store for KanameOS",
+      "category": "system",
+      "download": "store-1.3.2.wpk",
+      "icon": null,
+      "iconName": "system-software-install",
       "dependencies": []
     }
   ]
