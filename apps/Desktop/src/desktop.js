@@ -537,8 +537,15 @@ export default class Desktop extends EventEmitter {
 
     applyOverlays("osjs/widgets", newSettings.widgets);
 
-    this.applyTheme(newSettings.theme);
-    this.applyIcons(newSettings.icons);
+    this.core.emit("osjs/splash:update", 80, "Loading desktop theme...");
+
+    Promise.all([
+      this.applyTheme(newSettings.theme),
+      this.applyIcons(newSettings.icons),
+    ]).then(() => {
+      this.core.emit("osjs/splash:update", 95, "Starting desktop...");
+      this.core.emit("osjs/desktop:ready");
+    });
 
     this.applyIconView(newSettings.iconview);
 
