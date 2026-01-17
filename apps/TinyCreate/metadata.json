@@ -1,0 +1,16 @@
+{
+    "name": "TinyCrate",
+    "category": "games",
+    "version": "2025.04.29",
+    "icon": "icon.png",
+    "author": "KanameFundation",
+    "title": {
+        "en_EN": "TinyCrate"
+    },
+    "description": {
+        "en_EN": "TinyCrate Game Port"
+    },
+    "files": [
+        "main.js"
+    ]
+}
