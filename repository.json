@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-17T09:06:28.188Z",
+  "generatedAt": "2026-01-17T09:10:29.520Z",
   "apps": [
     {
       "name": "FileManager",
@@ -249,10 +249,10 @@
     {
       "name": "WBWWB",
       "title": "We Become What We Behold",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "description": "We Become What We Behold Port",
       "category": "games",
-      "download": "wbwwb-application-1.1.1.wpk",
+      "download": "wbwwb-application-1.1.2.wpk",
       "icon": "icons/wbwwb-application.png",
       "iconName": "icon.png",
       "dependencies": []
