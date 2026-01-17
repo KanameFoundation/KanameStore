@@ -1,8 +1,8 @@
+
 (function ($) {
 
     // these files are preloaded while the title screen is showing
     var files = [
-        // "js/wolf.js", // Loaded manually first
         "js/random.js",
         "js/angle.js",
         "js/math.js",
@@ -53,6 +53,7 @@
     ];
 
     $(document).ready(function () {
+        console.log("load_fixed.js ready. Wolf defined?", typeof Wolf !== 'undefined');
 
         var progress = $("<div>"),
             n = 0;
@@ -81,24 +82,31 @@
                 test: window.atob && window.btoa,
                 nope: "js/base64.js"
             }, {
-                load: "js/wolf.js", // EXECUTE FIRST
+                // Main loading block
+                load: files,
+                callback: function (file) {
+                    console.log("Loaded:", file);
+                    progress.width((++n / (files.length)) * 100 + "%");
+                },
                 complete: function () {
-                    Modernizr.load({
-                        load: files,
-                        callback: function (file) {
-                            progress.width((++n / (files.length)) * 100 + "%");
-                        },
-                        complete: function () {
-                            progress.remove();
-                            $("#title-screen").fadeOut(1500, function () {
-                                Wolf.Input.init();
-                                Wolf.Game.init();
-                                Wolf.Menu.show();
+                    console.log("All main files loaded.");
+                    console.log("Wolf.Input defined?", typeof Wolf !== 'undefined' && typeof Wolf.Input !== 'undefined');
+
+                    progress.remove();
+                    $("#title-screen").fadeOut(1500, function () {
+                        if (typeof Wolf.Input !== 'undefined' && typeof Wolf.Game !== 'undefined') {
+                            Wolf.Input.init();
+                            Wolf.Game.init();
+                            Wolf.Menu.show();
+                        } else {
+                            console.error("Critical components missing:", {
+                                Input: typeof Wolf.Input,
+                                Game: typeof Wolf.Game
                             });
-                            // preload non-essential art
-                            Modernizr.load(files2);
                         }
                     });
+                    // preload non-essential art
+                    Modernizr.load(files2);
                 }
             }
         ]);
