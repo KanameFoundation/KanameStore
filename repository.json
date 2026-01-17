@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-17T08:34:07.577Z",
+  "generatedAt": "2026-01-17T08:36:32.608Z",
   "apps": [
     {
       "name": "FileManager",
@@ -239,10 +239,10 @@
       "name": "TinyCrate",
       "title": "TinyCrate",
       "version": "2025.04.29.001",
-      "description": "KanameOS Wolfenstein 3D Application",
+      "description": "KanameOS TinyCrate Application",
       "category": "games",
-      "download": "wolfenstein3d-application-2025.04.29.001.wpk",
-      "icon": "icons/wolfenstein3d-application.png",
+      "download": "tinycrate-application-2025.04.29.001.wpk",
+      "icon": "icons/tinycrate-application.png",
       "iconName": "icon.png",
       "dependencies": []
     }
