@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-17T09:32:28.762Z",
+  "generatedAt": "2026-01-17T09:35:59.751Z",
   "apps": [
     {
       "name": "FileManager",
@@ -249,10 +249,10 @@
     {
       "name": "store",
       "title": "App Store",
-      "version": "1.3.3",
+      "version": "1.3.4",
       "description": "App Store for KanameOS",
       "category": "system",
-      "download": "store-1.3.3.wpk",
+      "download": "store-1.3.4.wpk",
       "icon": null,
       "iconName": "system-software-install",
       "dependencies": []
