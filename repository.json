@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-17T14:53:31.557Z",
+  "generatedAt": "2026-01-17T15:08:15.849Z",
   "apps": [
     {
       "name": "GnomeIcons",
@@ -237,17 +237,6 @@
       "dependencies": []
     },
     {
-      "name": "store",
-      "title": "App Store",
-      "version": "1.3.4",
-      "description": "App Store for KanameOS",
-      "category": "system",
-      "download": "store-1.3.4.wpk",
-      "icon": null,
-      "iconName": "system-software-install",
-      "dependencies": []
-    },
-    {
       "name": "FileManager",
       "title": "File Manager",
       "version": "2.0.1",
@@ -255,6 +244,17 @@
       "download": "filemanager-2.0.1.wpk",
       "icon": null,
       "iconName": "system-file-manager",
+      "dependencies": []
+    },
+    {
+      "name": "store",
+      "title": "App Store",
+      "version": "1.3.5",
+      "description": "App Store for KanameOS",
+      "category": "system",
+      "download": "store-1.3.5.wpk",
+      "icon": null,
+      "iconName": "system-software-install",
       "dependencies": []
     }
   ]
