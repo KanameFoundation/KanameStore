@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-17T08:42:09.202Z",
+  "generatedAt": "2026-01-17T08:49:35.319Z",
   "apps": [
     {
       "name": "FileManager",
@@ -203,17 +203,6 @@
       "dependencies": []
     },
     {
-      "name": "Wolfenstein3D",
-      "title": "Wolfenstein 3D",
-      "version": "1.1.6",
-      "description": "KanameOS Wolfenstein 3D Application",
-      "category": "games",
-      "download": "wolfenstein3d-application-1.1.6.wpk",
-      "icon": "icons/wolfenstein3d-application.png",
-      "iconName": "icon.png",
-      "dependencies": []
-    },
-    {
       "name": "AceEditor",
       "title": "Ace Editor",
       "version": "1.2.7",
@@ -243,6 +232,17 @@
       "category": "games",
       "download": "tinycrate-application-2025.04.29.002.wpk",
       "icon": "icons/tinycrate-application.png",
+      "iconName": "icon.png",
+      "dependencies": []
+    },
+    {
+      "name": "Wolfenstein3D",
+      "title": "Wolfenstein 3D",
+      "version": "1.1.7",
+      "description": "KanameOS Wolfenstein 3D Application",
+      "category": "games",
+      "download": "wolfenstein3d-application-1.1.7.wpk",
+      "icon": "icons/wolfenstein3d-application.png",
       "iconName": "icon.png",
       "dependencies": []
     }
