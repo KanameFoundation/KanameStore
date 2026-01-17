@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-17T09:29:27.670Z",
+  "generatedAt": "2026-01-17T09:32:28.762Z",
   "apps": [
     {
       "name": "FileManager",
@@ -170,17 +170,6 @@
       ]
     },
     {
-      "name": "store",
-      "title": "App Store",
-      "version": "1.3.2",
-      "description": "App Store for KanameOS",
-      "category": "system",
-      "download": "store-1.3.2.wpk",
-      "icon": null,
-      "iconName": "system-software-install",
-      "dependencies": []
-    },
-    {
       "name": "AceEditor",
       "title": "Ace Editor",
       "version": "1.2.7",
@@ -255,6 +244,17 @@
       "download": "osjs-desktop-1.3.2.wpk",
       "icon": null,
       "iconName": "computer",
+      "dependencies": []
+    },
+    {
+      "name": "store",
+      "title": "App Store",
+      "version": "1.3.3",
+      "description": "App Store for KanameOS",
+      "category": "system",
+      "download": "store-1.3.3.wpk",
+      "icon": null,
+      "iconName": "system-software-install",
       "dependencies": []
     }
   ]
