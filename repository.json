@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-17T09:10:29.520Z",
+  "generatedAt": "2026-01-17T09:20:57.437Z",
   "apps": [
     {
       "name": "FileManager",
@@ -31,17 +31,6 @@
       "download": "osjs-notifications-1.2.1.wpk",
       "icon": null,
       "iconName": "dialog-information",
-      "dependencies": []
-    },
-    {
-      "name": "osjs-panels",
-      "title": "Panel Settings",
-      "version": "1.4.2",
-      "description": "OS.js Panels",
-      "category": "system",
-      "download": "osjs-panel-1.4.2.wpk",
-      "icon": null,
-      "iconName": "preferences-desktop-display",
       "dependencies": []
     },
     {
@@ -192,17 +181,6 @@
       "dependencies": []
     },
     {
-      "name": "osjs-desktop",
-      "title": "Desktop Shell",
-      "version": "1.3.0",
-      "description": "KanameOS Desktop Shell",
-      "category": "system",
-      "download": "osjs-desktop-1.3.0.wpk",
-      "icon": null,
-      "iconName": "computer",
-      "dependencies": []
-    },
-    {
       "name": "AceEditor",
       "title": "Ace Editor",
       "version": "1.2.7",
@@ -255,6 +233,28 @@
       "download": "wbwwb-application-1.1.2.wpk",
       "icon": "icons/wbwwb-application.png",
       "iconName": "icon.png",
+      "dependencies": []
+    },
+    {
+      "name": "osjs-desktop",
+      "title": "Desktop Shell",
+      "version": "1.3.1",
+      "description": "KanameOS Desktop Shell",
+      "category": "system",
+      "download": "osjs-desktop-1.3.1.wpk",
+      "icon": null,
+      "iconName": "computer",
+      "dependencies": []
+    },
+    {
+      "name": "osjs-panels",
+      "title": "Panel Settings",
+      "version": "1.4.3",
+      "description": "OS.js Panels",
+      "category": "system",
+      "download": "osjs-panel-1.4.3.wpk",
+      "icon": null,
+      "iconName": "preferences-desktop-display",
       "dependencies": []
     }
   ]
