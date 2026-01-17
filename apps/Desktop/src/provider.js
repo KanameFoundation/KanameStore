@@ -28,7 +28,7 @@
  * @license Simplified BSD License
  */
 
-import {ServiceProvider} from './service-provider';
+import { ServiceProvider } from './service-provider';
 import Desktop from './desktop';
 
 /**
@@ -47,6 +47,7 @@ export default class DesktopServiceProvider extends ServiceProvider {
      * @readonly
      */
     this.desktop = new Desktop(this.core, this.options);
+    this.ready = false;
   }
 
   /**
@@ -75,7 +76,12 @@ export default class DesktopServiceProvider extends ServiceProvider {
 
     this.core.singleton('osjs/desktop', () => this.createDesktopContract());
 
-    const applySettings = () => this.desktop.applySettings();
+    const applySettings = () => this.desktop.applySettings()
+      .then(() => {
+        this.ready = true;
+      })
+      .catch(error => console.error(error));
+
     if (this.core.started) {
       applySettings();
     } else {
@@ -96,6 +102,7 @@ export default class DesktopServiceProvider extends ServiceProvider {
    */
   createDesktopContract() {
     return {
+      ready: () => this.ready,
       setKeyboardContext: ctx => this.desktop.setKeyboardContext(ctx),
       openContextMenu: ev => this.desktop.onContextMenu(ev),
       addContextMenuEntries: entries => this.desktop.addContextMenu(entries),

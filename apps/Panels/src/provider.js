@@ -161,18 +161,28 @@ export default class PanelServiceProvider {
 
   start() {
     this.inited = true;
-    
-    // Load panels from settings on start (like Waybar loading its config)
-    this.loadPanelsFromSettings();
-    
-    // Initialize all panels
-    this.panels.forEach(p => p.init());
+
+    const init = () => {
+      // Load panels from settings on start (like Waybar loading its config)
+      this.loadPanelsFromSettings();
+
+      // Initialize all panels
+      this.panels.forEach(p => p.init());
+    };
 
     // Listen for settings changes and reload panels
     this.core.on('osjs/settings:save', () => {
       // Only reload if desktop settings changed
       this.reloadPanels();
     });
+
+    // Check if desktop is already ready or wait for it
+    const desktop = this.core.has('osjs/desktop') ? this.core.make('osjs/desktop') : null;
+    if (desktop && desktop.ready && desktop.ready()) {
+      init();
+    } else {
+      this.core.once('osjs/desktop:ready', init);
+    }
   }
 
 }
