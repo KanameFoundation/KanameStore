@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-17T07:53:41.713Z",
+  "generatedAt": "2026-01-17T08:22:38.712Z",
   "apps": [
     {
       "name": "FileManager",
@@ -232,6 +232,17 @@
       "category": "utilities",
       "download": "textpad-application-1.2.7.wpk",
       "icon": "icons/textpad-application.png",
+      "iconName": "icon.png",
+      "dependencies": []
+    },
+    {
+      "name": "TinyCrate",
+      "title": "TinyCrate",
+      "version": "2025.04.29",
+      "description": "KanameOS Wolfenstein 3D Application",
+      "category": "games",
+      "download": "wolfenstein3d-application-2025.04.29.wpk",
+      "icon": "icons/wolfenstein3d-application.png",
       "iconName": "icon.png",
       "dependencies": []
     }
