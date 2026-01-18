@@ -1,6 +1,6 @@
 # KanameStore
 
-This is the official App Store registry for KanameOS.
+This is the official App Store registry for KanameOS™.
 
 ## How it works
 
