@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-19T12:22:12.465Z",
+  "generatedAt": "2026-01-19T12:29:46.177Z",
   "apps": [
     {
       "name": "GnomeIcons",
@@ -260,10 +260,10 @@
     {
       "name": "MonacoEditor",
       "title": "Monaco Editor",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "KanameOS Monaco Editor Application",
       "category": "development",
-      "download": "monaco-editor-application-1.0.0.wpk",
+      "download": "monaco-editor-application-1.1.0.wpk",
       "icon": "icons/monaco-editor-application.svg",
       "iconName": "icon.svg",
       "dependencies": []
