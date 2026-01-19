@@ -13,6 +13,14 @@ const createFileMenu = (current, actions, _) => ([
     { label: _('LBL_QUIT'), onclick: () => actions.menuQuit() }
 ]);
 
+const createViewMenu = (current, actions, _) => ([
+    {
+        label: 'Word Wrap',
+        checked: current.wordWrap,
+        onclick: () => actions.toggleWordWrap()
+    }
+]);
+
 const createApplication = (core, proc, win, $content) => {
     let editor;
     const vfs = core.make('osjs/vfs');
@@ -35,8 +43,17 @@ const createApplication = (core, proc, win, $content) => {
     const ha = app({
         row: 0,
         column: 0,
+        wordWrap: false
     }, {
         setStatus: ({ row, column }) => state => ({ row, column }),
+
+        toggleWordWrap: () => state => {
+            const newState = !state.wordWrap;
+            if (editor) {
+                editor.updateOptions({ wordWrap: newState ? 'on' : 'off' });
+            }
+            return { wordWrap: newState };
+        },
 
         save: () => state => {
             if (proc.args.file) {
@@ -66,6 +83,13 @@ const createApplication = (core, proc, win, $content) => {
             });
         },
 
+        viewMenu: ev => (state, actions) => {
+            core.make('osjs/contextmenu').show({
+                position: ev.target,
+                menu: createViewMenu(state, actions, _)
+            });
+        },
+
         menuNew: () => state => basic.createNew(),
         menuOpen: () => state => basic.createOpenDialog(),
         menuSave: () => (state, actions) => actions.save(),
@@ -76,7 +100,10 @@ const createApplication = (core, proc, win, $content) => {
             h(Menubar, {}, [
                 h(MenubarItem, {
                     onclick: ev => actions.fileMenu(ev)
-                }, _('LBL_FILE'))
+                }, _('LBL_FILE')),
+                h(MenubarItem, {
+                    onclick: ev => actions.viewMenu(ev)
+                }, _('LBL_VIEW'))
             ]),
             h(BoxContainer, {
                 key: 'monacoeditor',

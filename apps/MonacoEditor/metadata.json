@@ -1,7 +1,7 @@
 {
     "name": "MonacoEditor",
     "category": "development",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "icon": "icon.svg",
     "title": {
         "en_EN": "Monaco Editor"
