@@ -1,0 +1,28 @@
+{
+    "name": "monaco-editor-application",
+    "version": "1.0.0",
+    "description": "KanameOS Monaco Editor Application",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "eslint": "eslint *.js",
+        "build": "rspack --mode production",
+        "watch": "rspack --watch",
+        "prepublishOnly": "npm run eslint && rm -rf ./dist && NODE_ENV=production npm run build"
+    },
+    "files": [
+        "dist/",
+        "metadata.json"
+    ],
+    "devDependencies": {
+        "@rspack/cli": "^1.0.0",
+        "@rspack/core": "^1.0.0",
+        "css-loader": "^7.1.2",
+        "style-loader": "^4.0.0",
+        "file-loader": "^6.2.0"
+    },
+    "dependencies": {
+        "@osjs/gui": "^4.0.0",
+        "hyperapp": "^1.2.9",
+        "monaco-editor": "^0.50.0"
+    }
+}

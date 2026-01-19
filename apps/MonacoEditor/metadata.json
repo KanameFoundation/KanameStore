@@ -1,0 +1,23 @@
+{
+    "name": "MonacoEditor",
+    "category": "development",
+    "version": "1.0.0",
+    "icon": "icon.svg",
+    "title": {
+        "en_EN": "Monaco Editor"
+    },
+    "description": {
+        "en_EN": "Monaco Editor for KanameOS"
+    },
+    "mimes": [
+        "^text/",
+        "^application/javascript",
+        "^application/json",
+        "^application/x-python",
+        "^application/xml"
+    ],
+    "files": [
+        "main.js",
+        "main.css"
+    ]
+}
